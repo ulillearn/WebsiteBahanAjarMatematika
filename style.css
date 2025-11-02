@@ -111,7 +111,7 @@ body {
 
 .beranda-title {
   font-family: "Fredoka One", cursive;
-  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-size: clamp(3rem, 9vw, 5rem);
   color: white;
   line-height: 1.1;
   margin: 10px 0;
