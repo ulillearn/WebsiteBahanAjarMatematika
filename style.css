@@ -15,8 +15,9 @@
   --bayangan-kartu: 0 4px 12px rgba(0, 0, 0, 0.08);
 
   /* Warna untuk Beranda (dari gambar) */
-  --warna-beranda-latar: #d5e8d4;
-  --warna-beranda-outline: #b53c3c; /* Merah kecoklatan dari contoh */
+  --warna-beranda-latar: #d5e8d4; /* Hijau muda */
+  --warna-beranda-outline: #b53c3c; /* Merah tua */
+  --warna-beranda-bar: #2d7d6c; /* Hijau tua untuk bar */
 }
 
 /* Pengaturan Dasar Halaman */
@@ -84,23 +85,24 @@ body {
   color: white;
 }
 
-/* --- Hero Section Beranda --- */
+/* --- [BARU] Hero Section Beranda --- */
 .beranda-hero {
   background-color: var(--warna-beranda-latar);
-  /* Tinggi min-height agar ada ruang untuk gambar dekorasi */
-  min-height: 400px; /* Sesuaikan jika perlu */
-  padding: 60px 20px 40px 20px;
+  padding: 60px 20px; /* Padding atas & bawah */
   text-align: center;
-  border-bottom: 5px solid #a3c4a2; /* Border hijau gelap */
   position: relative;
-  overflow: hidden; /* Penting agar gambar tidak keluar dari area */
+  overflow: hidden; /* Penting! */
+  min-height: 450px; /* Beri ruang untuk dekorasi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2; /* Pastikan konten teks di atas gambar dekorasi */
-  max-width: 600px; /* Batasi lebar konten agar tidak terlalu melebar */
-  margin: 0 auto; /* Tengahkkan konten */
+  z-index: 2; /* Konten teks di atas dekorasi */
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .beranda-subtitle-top {
@@ -111,11 +113,10 @@ body {
 
 .beranda-title {
   font-family: "Fredoka One", cursive;
-  font-size: clamp(3rem, 9vw, 5rem);
+  font-size: clamp(3rem, 10vw, 5rem); /* Disesuaikan agar & tidak aneh */
   color: white;
-  line-height: 1.1;
+  line-height: 1.2;
   margin: 10px 0;
-  /* Efek stroke dan shadow untuk teks putih */
   -webkit-text-stroke: 1px var(--warna-beranda-outline);
   text-stroke: 1px var(--warna-beranda-outline);
   paint-order: stroke fill;
@@ -133,7 +134,7 @@ body {
 }
 
 .beranda-kelompok {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .beranda-kelompok h3 {
@@ -144,54 +145,43 @@ body {
 .beranda-kelompok ul {
   list-style-type: none;
   padding: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #444;
 }
 
-/* --- Dekorasi Gambar Hero Section --- */
+/* --- [BARU] Dekorasi Latar Belakang --- */
 .dekorasi {
   position: absolute;
-  /* Ganti opasitas jika gambar sudah pas */
-  /* opacity: 0.8; */
-  z-index: 1; /* Di bawah teks, di atas latar */
-  pointer-events: none; /* Agar tidak menghalangi klik pada elemen lain */
+  z-index: 1; /* Di bawah konten */
+  pointer-events: none;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.1));
 }
 
-/* Penggaris Kiri Atas */
 .dekorasi-penggaris-kiri {
-  top: -10px; /* Sesuaikan posisi agar sedikit keluar atau di dalam */
-  left: 0;
-  width: 180px; /* Lebar penggaris */
-  transform: rotate(-15deg); /* Sedikit miring */
-  filter: drop-shadow(
-    2px 2px 3px rgba(0, 0, 0, 0.2)
-  ); /* Tambah bayangan agar lebih hidup */
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  transform: rotate(-45deg);
 }
 
-/* Stapler Kanan Atas */
 .dekorasi-stapler-kanan {
   top: 20px;
   right: 20px;
-  width: 100px; /* Lebar stapler */
+  width: 120px;
   transform: rotate(10deg);
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
 }
 
-/* Siswa Kiri Bawah */
 .dekorasi-siswa {
-  bottom: -10px; /* Sesuaikan agar kakinya terlihat atau tersembunyi */
-  left: 20px;
-  width: 200px; /* Lebar gambar siswa */
-  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.3));
+  bottom: 20px;
+  left: 40px;
+  width: 150px; /* Ukuran siswa */
 }
 
-/* Tumpukan Buku Kanan Bawah */
 .dekorasi-buku {
-  bottom: 5px;
-  right: 5px;
-  width: 150px; /* Lebar tumpukan buku */
+  bottom: 20px;
+  right: 40px;
+  width: 130px;
   transform: rotate(-5deg);
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
 }
 
 /* --- Konten Utama & Pilihan Materi --- */
@@ -511,6 +501,47 @@ hr.pemisah-lkpd {
   border-top: 2px solid var(--warna-sekunder);
 }
 
+/* CSS untuk Skor Total & Detail Soal Cerita */
+.skor-total {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: var(--warna-benar-latar);
+  color: var(--warna-benar);
+  border: 1px solid var(--warna-benar);
+}
+
+details.contoh-jawaban {
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+details.contoh-jawaban summary {
+  padding: 12px;
+  font-weight: 600;
+  color: var(--warna-dasar-gelap);
+  cursor: pointer;
+  border-radius: 8px;
+}
+details.contoh-jawaban summary:hover {
+  background-color: #f0f0f0;
+}
+details.contoh-jawaban div {
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+details.contoh-jawaban p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+details.contoh-jawaban p strong {
+  color: #333;
+}
+
 /* --- Penyesuaian Responsif --- */
 @media (max-width: 768px) {
   .nav-container {
@@ -528,66 +559,16 @@ hr.pemisah-lkpd {
   }
 
   .beranda-hero {
-    padding: 40px 15px 30px 15px;
-    min-height: 350px; /* Sesuaikan untuk mobile */
+    padding: 40px 15px; /* Padding atas & bawah untuk mobile */
+    min-height: 0; /* Hapus min-height di mobile */
   }
-  /* Sembunyikan beberapa dekorasi di HP agar tidak terlalu ramai */
-  .dekorasi-penggaris-kiri,
-  .dekorasi-stapler-kanan,
-  .dekorasi-buku {
+
+  /* [PERBAIKAN] Sembunyikan SEMUA dekorasi di HP agar bersih */
+  .dekorasi {
     display: none;
-  }
-  .dekorasi-siswa {
-    width: 150px; /* Lebih kecil untuk mobile */
-    left: 5px;
-    bottom: 0px;
   }
 
   .materi-pilihan-container {
     grid-template-columns: 1fr;
-  }
-
-  /* --- [BARU] CSS untuk Skor Total & Detail Soal Cerita --- */
-
-  /* Tampilan untuk Total Skor */
-  .skor-total {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-align: center;
-    background-color: var(--warna-benar-latar);
-    color: var(--warna-benar);
-    border: 1px solid var(--warna-benar);
-  }
-
-  /* Tampilan untuk Spoiler Jawaban Soal Cerita */
-  details.contoh-jawaban {
-    margin-top: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 8px;
-  }
-  details.contoh-jawaban summary {
-    padding: 12px;
-    font-weight: 600;
-    color: var(--warna-dasar-gelap);
-    cursor: pointer;
-    border-radius: 8px;
-  }
-  details.contoh-jawaban summary:hover {
-    background-color: #f0f0f0;
-  }
-  details.contoh-jawaban div {
-    padding: 15px;
-    border-top: 1px solid #eee;
-  }
-  details.contoh-jawaban p {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-  }
-  details.contoh-jawaban p strong {
-    color: #333;
   }
 }
