@@ -1,14 +1,30 @@
-// Isi file: script.js
+// FUNGSI BARU: Untuk membersihkan path
+function cleanPath(path) {
+  // 1. Hapus / di awal (jika ada)
+  // 2. Hapus .html di akhir (jika ada)
+  return path.replace(/^\//, "").replace(/\.html$/, "");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Muat header
   fetch("header.html")
-    .then((response) => response.text())
+    .then((response) => {
+      // Tambahkan pengecekan jika header.html tidak ditemukan
+      if (!response.ok) {
+        console.error(
+          "Error: header.html tidak ditemukan. Pastikan file ada di root folder."
+        );
+      }
+      return response.text();
+    })
     .then((data) => {
       document.getElementById("header-placeholder").innerHTML = data;
 
-      // Dapatkan nama halaman saat ini, misal: "index.html" atau "bilangan_bulat.html"
-      const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
+      // --- LOGIKA BARU YANG DIPERBAIKI ---
+
+      // 1. Dapatkan path dari URL browser, bersihkan, dan atasi kasus homepage
+      // (Misal: /bilangan_bulat -> "bilangan_bulat" ATAU / -> "index")
+      const browserPath = cleanPath(window.location.pathname) || "index";
 
       // Cari semua link di navigasi
       const navLinks = document.querySelectorAll(
@@ -18,10 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.forEach((link) => {
         const linkHref = link.getAttribute("href");
 
-        // Cek apakah href link sama dengan halaman saat ini
-        if (linkHref === currentPage) {
-          // Jika ini link dropdown, tandai juga tombol dropdown-nya (opsional)
+        // 2. Dapatkan path dari link, bersihkan, dan atasi kasus homepage
+        // (Misal: bilangan_bulat.html -> "bilangan_bulat" ATAU index.html -> "index")
+        const linkPath = cleanPath(linkHref) || "index";
+
+        // 3. Bandingkan versi yang sudah bersih
+        if (linkPath === browserPath) {
+          // Jika link ada di dalam dropdown
           if (link.closest(".nav-dropdown")) {
+            // Tambahkan 'active' ke tombol dropdown utamanya (misal: "Quiz ▾")
             link
               .closest(".nav-dropdown")
               .querySelector(".dropbtn")
@@ -33,5 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
       });
+    })
+    .catch((error) => {
+      console.error("Gagal memuat header:", error);
+      document.getElementById("header-placeholder").innerHTML =
+        "<p style='color:red; text-align:center;'>Gagal memuat header.</p>";
     });
 });
