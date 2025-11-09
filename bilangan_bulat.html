@@ -9,45 +9,63 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .pengantar-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* Rasio 2:1, teks lebih lebar */
+        gap: 25px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .pengantar-gambar img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1; /* Membuat gambar persegi 1:1 */
+        object-fit: contain; /* Agar gambar tidak terpotong (lebih baik dari cover) */
+        border-radius: 0;
+        box-shadow: none;
+      }
+      /* Untuk tampilan HP */
+      @media (max-width: 768px) {
+        .pengantar-grid {
+          grid-template-columns: 1fr; /* Susun ke bawah */
+        }
+        .pengantar-gambar {
+          order: -1; /* Pindahkan gambar ke atas teks di HP */
+          margin-bottom: 15px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="header-placeholder"></div>
 
     <main class="container">
       <div class="card">
-        <h2>👋 Halo Juara Matematika!</h2>
-        <p>
-          Pernahkah kamu melihat suhu di kulkas yang minus (-)? Atau mengukur
-          kedalaman penyelam di bawah laut? Di Puncak Jayawijaya (gunung
-          tertinggi di Indonesia), suhunya bisa mencapai -8°C, lho! Itu semua
-          adalah contoh penggunaan <strong>Bilangan Bulat</strong>.
-        </p>
-        <p>
-          Bilangan bulat itu bukan cuma angka 1, 2, 3... tapi juga ada angka
-          negatif (-1, -2, -3) dan pastinya angka nol (0). Ayo kita pelajari
-          bersama!
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>🎯 Tujuan Kita di Bab Ini</h2>
-        <ul class="tujuan-list">
-          <li>
-            Mengerti cara menghitung <strong>penjumlahan</strong> bilangan bulat
-            (positif dan negatif).
-          </li>
-          <li>
-            Mengerti cara menghitung <strong>pengurangan</strong> bilangan
-            bulat.
-          </li>
-          <li>
-            Bisa memecahkan <strong>soal cerita</strong> yang memakai
-            penjumlahan dan pengurangan bilangan bulat.
-          </li>
-          <li>
-            Menjadi lebih percaya diri, teliti, dan jujur saat mengerjakan soal!
-          </li>
-        </ul>
+        <div class="pengantar-grid">
+          <div class="pengantar-teks">
+            <h2>👋 Halo Juara Matematika!</h2>
+            <p>
+              Pernahkah kamu melihat suhu di kulkas yang minus (-)? Atau
+              mengukur kedalaman penyelam di bawah laut? Di Puncak Jayawijaya,
+              suhunya bisa mencapai -8°C, lho! Itu semua adalah contoh
+              penggunaan
+              <strong>Bilangan Bulat</strong>.
+            </p>
+            <p>
+              Bilangan bulat itu bukan cuma angka 1, 2, 3... tapi juga ada angka
+              negatif (-1, -2, -3) dan pastinya angka nol (0). Ayo kita pelajari
+              bersama!
+            </p>
+          </div>
+          <div class="pengantar-gambar">
+            <img
+              src="ilustrasi_bilangan_bulat.jpg"
+              alt="Ilustrasi Bilangan Bulat (Termometer dan Kapal Selam)"
+            />
+          </div>
+        </div>
       </div>
 
       <div class="card">
@@ -59,6 +77,10 @@
           bagian pecahan atau desimal). Angka ini sering kita pakai sehari-hari,
           misalnya untuk menghitung suhu, ketinggian, atau untung-rugi.
         </p>
+
+        [Image of a number line showing positive integers, negative integers,
+        and zero]
+
         <p>Bilangan bulat terdiri dari 3 kelompok:</p>
         <ul>
           <li>
@@ -72,22 +94,6 @@
             adalah "lawan" dari bilangan positif: -1, -2, -3, -4, ... dan
             seterusnya.
           </li>
-        </ul>
-        <p><strong>Contoh Keren:</strong></p>
-        <ul>
-          <li>
-            Suhu di kulkas yang di bawah 0 derajat ditulis pakai negatif,
-            misalnya <strong>-5°C</strong>.
-          </li>
-          <li>
-            Penyelam yang ada 10 meter di bawah permukaan air laut, posisinya di
-            <strong>-10 m</strong>.
-          </li>
-        </ul>
-        <p><strong>Cara Baca & Tulis:</strong></p>
-        <ul>
-          <li><code>-32</code> dibaca "negatif tiga puluh dua".</li>
-          <li>"Negatif sebelas" ditulis <code>-11</code>.</li>
         </ul>
 
         <hr class="pemisah-lkpd" />
@@ -121,6 +127,7 @@
           Saat menjumlahkan di garis bilangan, kita pakai panah. Ingat aturan
           mainnya ya!
         </p>
+
         <img
           src="img_materi_2.jpg"
           alt="Aturan panah positif ke kanan, negatif ke kiri"
@@ -136,84 +143,19 @@
             <strong>KIRI</strong>.
           </li>
         </ul>
-
-        <h4>a. Positif (+) ditambah Positif (+)</h4>
-        <p>Contoh: <strong>2 + 3 = 5</strong></p>
-        <p>
-          Artinya: Mulai dari 0, maju (ke kanan) 2 langkah. Lalu, maju (ke
-          kanan) lagi 3 langkah. Berhenti di angka 5!
-        </p>
-        <img
-          src="img_materi_3.jpg"
-          alt="Garis bilangan 2 + 3 = 5"
-          class="materi-gambar"
-        />
-
-        <h4>b. Negatif (-) ditambah Negatif (-)</h4>
-        <p>Contoh: <strong>-2 + (-3) = -5</strong></p>
-        <p>
-          Artinya: Mulai dari 0, mundur (ke kiri) 2 langkah. Lalu, mundur (ke
-          kiri) lagi 3 langkah. Berhenti di angka -5!
-        </p>
-        <img
-          src="img_materi_4.jpg"
-          alt="Garis bilangan -2 + (-3) = -5"
-          class="materi-gambar"
-        />
-
-        <h4>c. Positif (+) ditambah Negatif (-)</h4>
         <p>Contoh: <strong>2 + (-3) = -1</strong></p>
         <p>
           Artinya: Mulai dari 0, maju (ke kanan) 2 langkah. Lalu, mundur (ke
           kiri) 3 langkah. Berhenti di angka -1!
         </p>
+
+        [Image of a number line calculation showing 2 + (-3) = -1]
+
         <img
           src="img_materi_5.jpg"
           alt="Garis bilangan 2 + (-3) = -1"
           class="materi-gambar"
         />
-
-        <h4>d. Negatif (-) ditambah Positif (+)</h4>
-        <p>Contoh: <strong>-2 + 3 = 1</strong></p>
-        <p>
-          Artinya: Mulai dari 0, mundur (ke kiri) 2 langkah. Lalu, maju (ke
-          kanan) 3 langkah. Berhenti di angka 1!
-        </p>
-        <img
-          src="img_materi_6.jpg"
-          alt="Garis bilangan -2 + 3 = 1"
-          class="materi-gambar"
-        />
-
-        <hr class="pemisah-lkpd" />
-
-        <h3>Sifat Keren Penjumlahan</h3>
-        <p>
-          Penjumlahan itu punya "sifat" atau "aturan" keren yang bikin hitungan
-          jadi gampang!
-        </p>
-        <ul>
-          <li>
-            <strong>Sifat Komutatif (Tukar Posisi)</strong>: Posisinya boleh
-            ditukar, hasilnya tetap sama! <br />Contoh: <code>3 + 2</code> sama
-            saja dengan <code>2 + 3</code>, hasilnya 5.
-          </li>
-          <li>
-            <strong>Sifat Asosiatif (Kelompok)</strong>: Kamu boleh kerjakan
-            dari mana dulu, hasilnya tetap sama! <br />Contoh:
-            <code>(3 + 2) + 1</code> sama saja dengan <code>3 + (2 + 1)</code>.
-          </li>
-          <li>
-            <strong>Unsur Identitas (Angka Nol)</strong>: Angka apapun kalau
-            ditambah 0, hasilnya ya angka itu sendiri. <br />Contoh:
-            <code>3 + 0 = 3</code>.
-          </li>
-          <li>
-            <strong>Invers (Lawan)</strong>: Setiap angka punya "lawan". Jika
-            ditambah lawannya, hasilnya pasti 0. <br />Contoh:
-            <code>3 + (-3) = 0</code>.
-          </li>
-        </ul>
 
         <hr class="pemisah-lkpd" />
 
@@ -230,351 +172,295 @@
           Jadi, <code>2 - 3</code> itu sama saja dengan <code>2 + (-3)</code>.
           Gampang, kan?
         </p>
-
-        <h4>a. Positif (+) dikurang Positif (+)</h4>
-        <p>Contoh: <strong>2 - 3 = -1</strong></p>
-        <p>
-          Sama dengan: <code>2 + (-3) = -1</code>. (Maju 2, mundur 3, berhenti
-          di -1).
-        </p>
-        <img
-          src="img_materi_7.jpg"
-          alt="Garis bilangan 2 - 3 = -1"
-          class="materi-gambar"
-        />
-
-        <h4>b. Negatif (-) dikurang Negatif (-)</h4>
         <p>Contoh: <strong>-2 - (-3) = 1</strong></p>
         <p>
           Sama dengan: <code>-2 + (Lawan dari -3)</code> →
           <code>-2 + 3 = 1</code>. (Mundur 2, maju 3, berhenti di 1).
         </p>
+
+        [Image of a number line calculation showing -2 - (-3) = 1]
+
         <img
           src="img_materi_8.jpg"
           alt="Garis bilangan -2 - (-3) = 1"
           class="materi-gambar"
         />
-
-        <h4>c. Positif (+) dikurang Negatif (-)</h4>
-        <p>Contoh: <strong>2 - (-3) = 5</strong></p>
-        <p>
-          Sama dengan: <code>2 + (Lawan dari -3)</code> →
-          <code>2 + 3 = 5</code>. (Maju 2, maju lagi 3, berhenti di 5).
-        </p>
-        <img
-          src="img_materi_9.jpg"
-          alt="Garis bilangan 2 - (-3) = 5"
-          class="materi-gambar"
-        />
-
-        <h4>d. Negatif (-) dikurang Positif (+)</h4>
-        <p>Contoh: <strong>-2 - 3 = -5</strong></p>
-        <p>
-          Sama dengan: <code>-2 + (Lawan dari 3)</code> →
-          <code>-2 + (-3) = -5</code>. (Mundur 2, mundur lagi 3, berhenti di
-          -5).
-        </p>
-        <img
-          src="img_materi_10.jpg"
-          alt="Garis bilangan -2 - 3 = -5"
-          class="materi-gambar"
-        />
-
-        <h3>Sifat Pengurangan</h3>
-        <ul>
-          <li>
-            <strong>Kalau dikurang Nol (0):</strong> Angkanya tetap! (<code
-              >a - 0 = a</code
-            >). Contoh: <code>3 - 0 = 3</code>.
-          </li>
-          <li>
-            <strong>Kalau Nol (0) dikurang:</strong> Hasilnya jadi negatif!
-            (<code>0 - a = -a</code>). Contoh: <code>0 - 3 = -3</code>.
-          </li>
-        </ul>
       </div>
 
       <div class="card lkpd">
-        <h2>🧠 Uji Pemahamanmu! (Pilihan Ganda)</h2>
+        <h2>🧠 LKPD Interaktif: Bilangan Bulat</h2>
+        <p>Ayo uji pemahamanmu! Selesaikan 3 bagian latihan di bawah ini.</p>
+
+        <hr class="pemisah-lkpd" />
+
+        <h3>A. LKPD Penjumlahan Bilangan Bulat</h3>
+        <ul class="tujuan-list" style="margin-bottom: 20px">
+          <li>Siswa dapat menentukan hasil penjumlahan bilangan bulat.</li>
+          <li>Siswa dapat menjumlahkan bilangan positif dan negatif.</li>
+        </ul>
 
         <div class="quiz-item">
-          <p class="soal">1. Hasil dari 5 + (-8) adalah...</p>
+          <p class="soal">1. Hasil dari 15 + (-8) adalah...</p>
           <ul class="quiz-options">
             <li>
               <input type="radio" name="q1" id="q1a" value="a" /><label
                 for="q1a"
-                >a. 13</label
+                >a. 23</label
               >
             </li>
             <li>
               <input type="radio" name="q1" id="q1b" value="b" /><label
                 for="q1b"
-                >b. 3</label
+                >b. 7</label
               >
             </li>
             <li>
               <input type="radio" name="q1" id="q1c" value="c" /><label
                 for="q1c"
-                >c. -3</label
+                >c. -7</label
               >
             </li>
           </ul>
-          <button class="quiz-btn" data-quiz="1">Cek Jawaban</button>
           <div class="feedback-box" id="feedback1"></div>
         </div>
 
         <div class="quiz-item">
-          <p class="soal">2. Hasil dari -4 - 3 adalah...</p>
+          <p class="soal">2. Hasil dari -7 + (-5) adalah...</p>
           <ul class="quiz-options">
             <li>
               <input type="radio" name="q2" id="q2a" value="a" /><label
                 for="q2a"
-                >a. -7</label
+                >a. -12</label
               >
             </li>
             <li>
               <input type="radio" name="q2" id="q2b" value="b" /><label
                 for="q2b"
-                >b. -1</label
+                >b. -2</label
               >
             </li>
             <li>
               <input type="radio" name="q2" id="q2c" value="c" /><label
                 for="q2c"
-                >c. 1</label
+                >c. 12</label
               >
             </li>
           </ul>
-          <button class="quiz-btn" data-quiz="2">Cek Jawaban</button>
           <div class="feedback-box" id="feedback2"></div>
         </div>
 
         <div class="quiz-item">
-          <p class="soal">
-            3. Seekor lumba-lumba berada 3 meter di bawah permukaan laut.
-            Kemudian, ia melompat setinggi 7 meter. Di ketinggian berapakah
-            lumba-lumba itu sekarang?
-          </p>
+          <p class="soal">3. Hasil dari -10 + 15 adalah...</p>
           <ul class="quiz-options">
             <li>
               <input type="radio" name="q3" id="q3a" value="a" /><label
                 for="q3a"
-                >a. 10 meter di atas permukaan laut</label
+                >a. -25</label
               >
             </li>
             <li>
               <input type="radio" name="q3" id="q3b" value="b" /><label
                 for="q3b"
-                >b. 4 meter di atas permukaan laut</label
+                >b. -5</label
               >
             </li>
             <li>
               <input type="radio" name="q3" id="q3c" value="c" /><label
                 for="q3c"
-                >c. 4 meter di bawah permukaan laut</label
+                >c. 5</label
               >
             </li>
           </ul>
-          <button class="quiz-btn" data-quiz="3">Cek Jawaban</button>
           <div class="feedback-box" id="feedback3"></div>
         </div>
 
-        <hr class="pemisah-lkpd" />
-
-        <h3>📝 Soal Evaluasi Tambahan</h3>
-        <p style="font-style: italic; margin-bottom: 20px">
-          Kerjakan soal-soal berikut di buku tulismu!
-        </p>
-
-        <div class="evaluasi-isian">
-          <ol>
-            <li><p>-27 + 10 = ……</p></li>
-            <li><p>15 – (-25) = ……</p></li>
-            <li><p>36 + (-20) = ……</p></li>
-            <li><p>Hasil dari (-13) + (-27) adalah….</p></li>
-            <li><p>Jika (-19) – (-15) = n, maka nilai n adalah……..</p></li>
-            <li>
-              <p>
-                Hitunglah hasil operasi bilangan bulat berikut, (-96) + (-12) =
-                ……
-              </p>
-            </li>
-            <li>
-              <p>Penjumlahan pada garis bilangan berikut, hasilnya adalah…</p>
-              <img
-                src="img1SoalLKPD.jpg"
-                alt="Garis bilangan soal 7"
-                class="soal-gambar"
-              />
-            </li>
-            <li>
-              <p>
-                Operasi bilangan bulat yang benar pada garis bilangan dibawah
-                ini adalah…..
-              </p>
-              <img
-                src="img2SoalLKPD.jpg"
-                alt="Garis bilangan soal 8"
-                class="soal-gambar"
-              />
-            </li>
-            <li>
-              <p>
-                Kalimat operasi hitung bilagan yang tepat sesuai garis bilangan
-                tersebut adalah….
-              </p>
-              <img
-                src="img3SoalLKPD.jpg"
-                alt="Garis bilangan soal 9"
-                class="soal-gambar"
-              />
-            </li>
-            <li>
-              <p>
-                Kalimat matematika yang tepat dari garis bilangan di bawah ini
-                adalah…..
-              </p>
-              <img
-                src="img4SoalLKPD.jpg"
-                alt="Garis bilangan soal 10"
-                class="soal-gambar"
-              />
-            </li>
-            <li>
-              <p>
-                Sebuah toko menerima 120 kotak masker pada pagi hari dan 85
-                kotak lagi pada siang hari.
-              </p>
-              <ol type="a">
-                <li>Berapa total kotak masker yang diterima toko hari itu?</li>
-                <li>
-                  Jika setiap kotak berisi 10 masker, berapa jumlah seluruh
-                  masker?
-                </li>
-                <li>
-                  Jelaskan bagaimana konsep “bilangan positif ditambah positif”
-                  berkaitan dengan peningkatan stok toko!
-                </li>
-              </ol>
-            </li>
-            <li>
-              <p>
-                Sebuah tim peneliti cuaca sedang memantau suhu di Antartika.
-                Pada hari pertama, suhu tercatat –12°C. Malam berikutnya, suhu
-                turun lagi sebesar –8°C.
-              </p>
-              <ol type="a">
-                <li>Berapa suhu Antartika setelah penurunan suhu malam itu?</li>
-                <li>
-                  Jelaskan secara logis mengapa hasil penjumlahan dua bilangan
-                  negatif membuat suhu semakin rendah!
-                </li>
-                <li>
-                  Jika penurunan suhu terus berkurang 8°C setiap hari, tuliskan
-                  rumus atau pola yang bisa digunakan untuk memperkirakan suhu
-                  pada hari ke-n!
-                </li>
-              </ol>
-            </li>
-            <li>
-              <p>
-                Seorang penjelajah memiliki saldo energi 20. Hari 1: kehilangan
-                –15 energi. Hari 2: mendapat 10 energi. Hari 3: kehilangan –20
-                energi.
-              </p>
-              <ol type="a">
-                <li>Hitung energi penjelajah setelah 3 hari!</li>
-                <li>
-                  Jelaskan bagaimana bilangan positif dan negatif memengaruhi
-                  total energi!
-                </li>
-                <li>
-                  Jika penjelajah ingin energinya kembali ke 20, berapa energi
-                  yang harus dia dapatkan atau kurangi?
-                </li>
-              </ol>
-            </li>
-            <li>
-              <p>Rina sedang mengecek saldo tabungan di rekeningnya.</p>
-              <ul>
-                <li>Saldo awal: Rp 50.000</li>
-                <li>
-                  Hari Senin, ia menarik uang Rp 20.000 (negatif) untuk membeli
-                  buku.
-                </li>
-                <li>
-                  Hari Selasa, ia menerima uang hadiah Rp 35.000 (positif) dari
-                  orang tua.
-                </li>
-                <li>Hari Rabu, ia membayar uang jajan Rp 60.000 (negatif).</li>
-                <li>
-                  Hari Kamis, ia mendapat uang kembalian Rp 15.000 (positif).
-                </li>
-              </ul>
-              <p style="margin-top: 10px"><strong>Pertanyaan:</strong></p>
-              <ol type="a">
-                <li>Hitung saldo akhir Rina setelah 4 hari.</li>
-                <li>
-                  Gambarlah garis bilangan untuk menggambarkan setiap transaksi.
-                </li>
-                <li>
-                  Jelaskan bagaimana bilangan positif dan negatif membantu
-                  memahami kenaikan dan penurunan saldo.
-                </li>
-                <li>
-                  <strong>Bonus:</strong> Jika Rina ingin memiliki saldo minimal
-                  Rp 30.000 setelah semua transaksi, berapa tambahan uang yang
-                  harus ia terima atau hemat? Jelaskan logikamu.
-                </li>
-              </ol>
-            </li>
-          </ol>
-        </div>
+        <button type="button" class="quiz-btn" id="cek-lkpd-penjumlahan">
+          Cek Jawaban Penjumlahan
+        </button>
 
         <hr class="pemisah-lkpd" />
 
-        <h3>🔥 Tugas HOTS: Pendakian Gunung Leo</h3>
-        <div class="evaluasi-isian">
-          <p>Leo memulai pendakian di ketinggian +50 m. Perjalanannya:</p>
-          <ul>
-            <li>Turun –30 m melewati lembah.</li>
-            <li>Naik +40 m ke bukit berikutnya</li>
-            <li>Turun lagi –50 m saat menyeberangi jurang</li>
-            <li>Naik +60 m untuk sampai ke perkemahan</li>
+        <h3>B. LKPD Pengurangan Bilangan Bulat</h3>
+        <ul class="tujuan-list" style="margin-bottom: 20px">
+          <li>Siswa dapat menentukan hasil pengurangan bilangan bulat.</li>
+          <li>Siswa dapat mengubah operasi pengurangan menjadi penjumlahan.</li>
+        </ul>
+
+        <div class="quiz-item">
+          <p class="soal">1. Hasil dari 10 - 14 adalah...</p>
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q4" id="q4a" value="a" /><label
+                for="q4a"
+                >a. 4</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q4" id="q4b" value="b" /><label
+                for="q4b"
+                >b. 24</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q4" id="q4c" value="c" /><label
+                for="q4c"
+                >c. -4</label
+              >
+            </li>
           </ul>
-          <p style="margin-top: 15px"><strong>Garis bilangan:</strong></p>
-          <p
-            style="
-              font-family: 'Courier New', monospace;
-              font-size: 16px;
-              white-space: pre;
-            "
-          >
-            0 20 50 80 100 |-------|-------|-------|-------| ↑ Titik awal +50
-          </p>
-          <p style="margin-top: 15px">
-            <strong>Tugas (Kerjakan di buku tulismu):</strong>
-          </p>
-          <ol style="list-style-type: decimal">
-            <li>
-              Tandai setiap langkah perjalanan Leo di garis bilangan:
-              <ul style="list-style-type: disc">
-                <li>Naik → panah ke kanan</li>
-                <li>Turun → panah ke kiri</li>
-              </ul>
-            </li>
-            <li>Tentukan ketinggian akhir Leo!</li>
-            <li>
-              Jelaskan bagaimana bilangan positif dan negatif memengaruhi posisi
-              Leo!
-            </li>
-            <li>
-              <strong>Bonus:</strong> Jika Rina ingin memiliki saldo minimal Rp
-              30.000 setelah semua transaksi, berapa tambahan uang yang harus ia
-              terima atau hemat? Jelaskan logikamu.
-            </li>
-          </ol>
+          <div class="feedback-box" id="feedback4"></div>
         </div>
+
+        <div class="quiz-item">
+          <p class="soal">2. Hasil dari 8 - (-5) adalah...</p>
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q5" id="q5a" value="a" /><label
+                for="q5a"
+                >a. 13</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q5" id="q5b" value="b" /><label
+                for="q5b"
+                >b. 3</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q5" id="q5c" value="c" /><label
+                for="q5c"
+                >c. -13</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback5"></div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="soal">3. Hasil dari -12 - (-10) adalah...</p>
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q6" id="q6a" value="a" /><label
+                for="q6a"
+                >a. -22</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q6" id="q6b" value="b" /><label
+                for="q6b"
+                >b. -2</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q6" id="q6c" value="c" /><label
+                for="q6c"
+                >c. 2</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback6"></div>
+        </div>
+
+        <button type="button" class="quiz-btn" id="cek-lkpd-pengurangan">
+          Cek Jawaban Pengurangan
+        </button>
+
+        <hr class="pemisah-lkpd" />
+
+        <h3>C. Soal Cerita</h3>
+        <ul class="tujuan-list" style="margin-bottom: 20px">
+          <li>Siswa dapat memecahkan masalah soal cerita sehari-hari.</li>
+          <li>Siswa dapat menerapkan konsep penjumlahan & pengurangan.</li>
+        </ul>
+
+        <div class="quiz-item">
+          <p class="soal">
+            1. Suhu di sebuah kota pada pagi hari adalah -5°C. Pada siang hari,
+            suhunya naik 15°C. Berapa suhu kota tersebut pada siang hari?
+          </p>
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q7" id="q7a" value="a" /><label
+                for="q7a"
+                >a. -20°C</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q7" id="q7b" value="b" /><label
+                for="q7b"
+                >b. 10°C</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q7" id="q7c" value="c" /><label
+                for="q7c"
+                >c. 20°C</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback7"></div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="soal">
+            2. Seekor lumba-lumba berada 3 meter di bawah permukaan laut (-3 m).
+            Kemudian, ia melompat setinggi 7 meter ke atas. Di ketinggian
+            berapakah lumba-lumba itu sekarang?
+          </p>
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q8" id="q8a" value="a" /><label
+                for="q8a"
+                >a. 10 meter di atas permukaan laut (+10 m)</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q8" id="q8b" value="b" /><label
+                for="q8b"
+                >b. 4 meter di bawah permukaan laut (-4 m)</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q8" id="q8c" value="c" /><label
+                for="q8c"
+                >c. 4 meter di atas permukaan laut (+4 m)</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback8"></div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="soal">
+            3. Dalam sebuah kuis, tim A mendapat skor 25, tetapi kemudian
+            mendapat penalti (pengurangan) 30 poin. Berapa skor akhir tim A?
+          </p>
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q9" id="q9a" value="a" /><label
+                for="q9a"
+                >a. 55 poin</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q9" id="q9b" value="b" /><label
+                for="q9b"
+                >b. 5 poin</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q9" id="q9c" value="c" /><label
+                for="q9c"
+                >c. -5 poin</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback9"></div>
+        </div>
+
+        <button type="button" class="quiz-btn" id="cek-lkpd-cerita">
+          Cek Jawaban Soal Cerita
+        </button>
       </div>
     </main>
 
@@ -582,57 +468,111 @@
       <p>Kelompok 7 - Pengembangan Matematika SD | 2025</p>
     </footer>
 
-    <script src="script.js"></script>
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Logika Kuis (LKPD Pilihan Ganda)
+        // Kunci Jawaban
         const correctAnswers = {
-          q1: "c",
-          q2: "a",
-          q3: "b",
+          q1: "b", // 15 + (-8) = 7
+          q2: "a", // -7 + (-5) = -12
+          q3: "c", // -10 + 15 = 5
+          q4: "c", // 10 - 14 = -4
+          q5: "a", // 8 - (-5) = 13
+          q6: "b", // -12 - (-10) = -2
+          q7: "b", // -5 + 15 = 10
+          q8: "c", // -3 + 7 = 4
+          q9: "c", // 25 - 30 = -5
         };
 
+        // Pesan Feedback
         const feedbackMessages = {
           correct: "Kerja Bagus! Jawabanmu Benar! 👍",
           incorrect: {
-            q1: "Yah, belum tepat. Jawaban yang benar adalah c (-3). (Maju 5, lalu mundur 8)",
-            q2: "Yah, belum tepat. Jawaban yang benar adalah a (-7). (-4 - 3 sama dengan -4 + (-3))",
-            q3: "Yah, belum tepat. Jawaban yang benar adalah b. (Dari -3 meter, naik 7 meter, jadi -3 + 7 = 4 meter)",
+            q1: "Yah, belum tepat. Jawaban yang benar adalah b (7).",
+            q2: "Yah, belum tepat. Jawaban yang benar adalah a (-12).",
+            q3: "Yah, belum tepat. Jawaban yang benar adalah c (5).",
+            q4: "Yah, belum tepat. Jawaban yang benar adalah c (-4).",
+            q5: "Yah, belum tepat. Jawaban yang benar adalah a (13).",
+            q6: "Yah, belum tepat. Jawaban yang benar adalah b (-2).",
+            q7: "Yah, belum tepat. Jawaban yang benar adalah b (10°C).",
+            q8: "Yah, belum tepat. Jawaban yang benar adalah c (+4 m).",
+            q9: "Yah, belum tepat. Jawaban yang benar adalah c (-5 poin).",
           },
           noAnswer: "Oops, kamu belum memilih jawaban!",
         };
 
-        const quizButtons = document.querySelectorAll(".quiz-btn");
-        quizButtons.forEach(function (button) {
-          button.addEventListener("click", function () {
-            const quizNum = button.getAttribute("data-quiz");
-            const questionName = "q" + quizNum;
+        // --- Fungsi Helper untuk Cek Soal ---
+        function cekBagian(start, end, alertMessage) {
+          let allAnswered = true;
+          // Validasi
+          for (let i = start; i <= end; i++) {
+            if (!document.querySelector('input[name="q' + i + '"]:checked')) {
+              allAnswered = false;
+              break;
+            }
+          }
+
+          if (!allAnswered) {
+            alert(alertMessage);
+            return; // Hentikan jika ada yg kosong
+          }
+
+          // Jika semua terisi, cek jawaban
+          for (let i = start; i <= end; i++) {
+            const questionName = "q" + i;
             const selectedOption = document.querySelector(
               'input[name="' + questionName + '"]:checked'
             );
-            const feedbackBox = document.getElementById("feedback" + quizNum);
+            const feedbackBox = document.getElementById("feedback" + i);
+            const userAnswer = selectedOption.value;
+            const correctAnswer = correctAnswers[questionName];
 
-            if (selectedOption) {
-              const userAnswer = selectedOption.value;
-              const correctAnswer = correctAnswers[questionName];
-
-              if (userAnswer === correctAnswer) {
-                feedbackBox.textContent = feedbackMessages.correct;
-                feedbackBox.className = "feedback-box correct";
-              } else {
-                feedbackBox.textContent =
-                  feedbackMessages.incorrect[questionName];
-                feedbackBox.className = "feedback-box incorrect";
-              }
+            if (userAnswer === correctAnswer) {
+              feedbackBox.textContent = feedbackMessages.correct;
+              feedbackBox.className = "feedback-box correct";
             } else {
-              feedbackBox.textContent = feedbackMessages.noAnswer;
+              feedbackBox.textContent =
+                feedbackMessages.incorrect[questionName];
               feedbackBox.className = "feedback-box incorrect";
             }
             feedbackBox.style.display = "block";
+          }
+        }
+
+        // --- Tombol 1: LKPD Penjumlahan (Soal 1-3) ---
+        document
+          .getElementById("cek-lkpd-penjumlahan")
+          .addEventListener("click", function () {
+            cekBagian(
+              1,
+              3,
+              "Oops, jawab dulu semua soal di Bagian A (Penjumlahan) ya!"
+            );
           });
-        });
+
+        // --- Tombol 2: LKPD Pengurangan (Soal 4-6) ---
+        document
+          .getElementById("cek-lkpd-pengurangan")
+          .addEventListener("click", function () {
+            cekBagian(
+              4,
+              6,
+              "Oops, jawab dulu semua soal di Bagian B (Pengurangan) ya!"
+            );
+          });
+
+        // --- Tombol 3: LKPD Soal Cerita (Soal 7-9) ---
+        document
+          .getElementById("cek-lkpd-cerita")
+          .addEventListener("click", function () {
+            cekBagian(
+              7,
+              9,
+              "Oops, jawab dulu semua soal di Bagian C (Soal Cerita) ya!"
+            );
+          });
       });
     </script>
+
+    <script src="script.js"></script>
   </body>
 </html>

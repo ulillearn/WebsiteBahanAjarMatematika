@@ -9,43 +9,61 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .pengantar-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 25px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .pengantar-gambar img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      @media (max-width: 768px) {
+        .pengantar-grid {
+          grid-template-columns: 1fr;
+        }
+        .pengantar-gambar {
+          order: -1;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="header-placeholder"></div>
 
     <main class="container">
       <div class="card">
-        <h2>🏕️ Yuk, Jadi Arsitek Cilik!</h2>
-        <p>
-          Lihat deh tenda kemah, atap rumah, atau bahkan potongan kue! Bentuknya
-          keren, kan? Itu adalah contoh <strong>Prisma Segitiga</strong>.
-        </p>
-        <p>
-          Prisma segitiga adalah bangun ruang yang punya alas dan tutup (atas)
-          berbentuk segitiga yang sama persis. Di bab ini, kita akan belajar
-          cara menghitung luas selimutnya dan berapa "isi" (volume) di dalamnya!
-        </p>
-      </div>
-
-      <div class="card">
-        <h2>🎯 Tujuan Kita di Bab Ini</h2>
-        <ul class="tujuan-list">
-          <li>
-            Bisa menghitung <strong>Luas Permukaan</strong> prisma segitiga
-            (seperti menghitung kain untuk tenda).
-          </li>
-          <li>
-            Bisa menghitung <strong>Volume</strong> prisma segitiga (seperti
-            menghitung udara di dalam tenda).
-          </li>
-          <li>
-            Bisa memecahkan <strong>soal cerita</strong> yang berhubungan dengan
-            prisma segitiga.
-          </li>
-          <li>
-            Menjadi lebih teliti dan bertanggung jawab saat mengerjakan soal!
-          </li>
-        </ul>
+        <div class="pengantar-grid">
+          <div class="pengantar-teks">
+            <h2>🏕️ Yuk, Jadi Arsitek Cilik!</h2>
+            <p>
+              Lihat deh tenda kemah, atap rumah, atau bahkan potongan kue!
+              Bentuknya keren, kan? Itu adalah contoh
+              <strong>Prisma Segitiga</strong>.
+            </p>
+            <p>
+              Prisma segitiga adalah bangun ruang yang punya alas dan tutup
+              (atas) berbentuk segitiga yang sama persis. Di bab ini, kita akan
+              belajar cara menghitung luas selimutnya dan berapa "isi" (volume)
+              di dalamnya!
+            </p>
+          </div>
+          <div class="pengantar-gambar">
+            <img
+              src="ilustrasi_prisma_segitiga.png"
+              alt="Ilustrasi Prisma Segitiga (Tenda dan Potongan Kue)"
+            />
+          </div>
+        </div>
       </div>
 
       <div class="card">
@@ -56,7 +74,6 @@
           Prisma adalah bangun ruang 3D yang punya 2 sisi "kembar" yang sejajar.
           Coba bayangkan potongan kue keju, tenda kemah, atau atap rumah.
         </p>
-
         <img
           src="img_materi_11.jpg"
           alt="Contoh prisma berbentuk potongan kue"
@@ -85,16 +102,11 @@
         <p>
           Ayo kita "bedah" prisma segitiga dan lihat ada apa saja di dalamnya!
         </p>
-
-        [Image of a labeled diagram of a triangular prism showing faces, edges,
-        and vertices]
-
         <img
           src="img_materi_12.jpg"
           alt="Diagram bagian-bagian prisma segitiga"
           class="materi-gambar"
         />
-
         <ul>
           <li>
             <strong>Sisi (Bidang)</strong>
@@ -138,45 +150,10 @@
           dan 3 sisi tegak). Bayangkan kamu membungkus kado prisma, kita harus
           menghitung semua luas kertas kado yang dibutuhkan.
         </p>
-
-        [Image of the net of a triangular prism laid flat]
-
-        <h4>Cara 1: Hitung Satu per Satu (Cara Panjang)</h4>
-        <p>Kamu bisa menjumlahkan semua luas sisinya:</p>
-        <div
-          class="rumus-box"
-          style="
-            font-size: 1.1rem;
-            text-align: left;
-            font-family: 'Poppins', sans-serif;
-          "
-        >
-          <strong>Luas Prisma = (2 × Luas Alas) + Luas Selimut</strong>
-          <br />
-          LP = (2 × (½ × a × t)) + ( (p×l) + (p×l) + (p×l) )
-        </div>
-        <p>Penjelasannya:</p>
-        <ul>
-          <li>
-            <strong>(2 × Luas Alas):</strong> Karena alas dan tutupnya sama
-            (kembar), kita hitung <code>2 × (½ × a × t)</code>.
-          </li>
-          <li>
-            <strong>Luas Selimut:</strong> Ini adalah jumlah 3 sisi persegi
-            panjangnya. <code>(p × l) + (p × l) + (p × l)</code>.
-          </li>
-        </ul>
-
-        <h4>Cara 2: Rumus Cepat (Cara Terbaik!)</h4>
-        <p>
-          Ternyata, `Luas Selimut` itu sama saja dengan `Keliling Alas × Tinggi
-          Prisma`.
-        </p>
-        <p>Jadi, rumus cepatnya adalah:</p>
+        <p>Rumus cepat untuk Luas Permukaan (LP) adalah:</p>
         <div class="rumus-box">
           LP = (2 × Luas Alas) + (Keliling Alas × Tinggi Prisma)
         </div>
-
         <p>Keterangan:</p>
         <ul>
           <li>
@@ -200,7 +177,6 @@
           Volume adalah "isi" dari bangun ruang itu (misalnya, berapa banyak
           udara di dalam tenda).
         </p>
-
         <p>Ini adalah rumus yang paling gampang diingat:</p>
         <div class="rumus-box">Volume = Luas Alas × Tinggi Prisma</div>
         <p>Keterangan:</p>
@@ -217,194 +193,226 @@
       </div>
 
       <div class="card lkpd">
-        <h2>📝 LKPD Geometri (Latihan Mandiri)</h2>
-        <p style="font-style: italic; margin-bottom: 20px">
-          Kerjakan soal-soal berikut di buku tulismu!
-        </p>
+        <h2>🧠 LKPD Interaktif: Prisma Segitiga</h2>
+        <p>Ayo uji pemahamanmu! Selesaikan 3 bagian latihan di bawah ini.</p>
 
-        <div class="evaluasi-isian">
-          <h3>A. Luas Prisma Segitiga</h3>
-          <ol>
-            <li>
-              <p>
-                Manakah rumus yang benar untuk menghitung Luas Permukaan (LP)
-                prisma segitiga?
-              </p>
-            </li>
-            <li>
-              <p>
-                Keliling alas sebuah prisma segitiga adalah 25 cm. Jika tinggi
-                prisma tersebut 10 cm, berapakah luas selimutnya (luas sisi-sisi
-                tegak)?
-              </p>
-            </li>
-            <li>
-              <p>
-                Sebuah prisma segitiga memiliki: Luas Alas = 20 cm², Keliling
-                Alas = 30 cm, Tinggi Prisma = 8 cm. Berapakah luas permukaan
-                total prisma tersebut?
-              </p>
-            </li>
-            <li>
-              <p>
-                Sebuah prisma segitiga memiliki luas alas 10 cm². Berapakah
-                total luas dari kedua alasnya (alas dan tutup)?
-              </p>
-            </li>
-            <li>
-              <p>
-                Sebuah prisma segitiga memiliki alas segitiga sama sisi dengan
-                panjang sisi 10 cm. Tinggi prisma 20 cm. Hitung luas permukaan
-                prisma segitiga tersebut. (Gunakan luas segitiga sama sisi = ¼ ×
-                √3 × s²)
-              </p>
-            </li>
-          </ol>
+        <hr class="pemisah-lkpd" />
 
-          <h3>B. Volume Prisma Segitiga</h3>
-          <ol>
+        <h3>A. LKPD Luas Prisma Segitiga</h3>
+        <ul class="tujuan-list" style="margin-bottom: 20px">
+          <li>Siswa dapat menghitung luas permukaan prisma segitiga.</li>
+          <li>Siswa dapat mengidentifikasi komponen luas permukaan.</li>
+        </ul>
+
+        <div class="quiz-item">
+          <p class="soal">
+            1. Diketahui prisma segitiga memiliki panjang rusuk alas 5 cm, 12
+            cm, dan 13 cm. Jika tinggi prisma 8 cm, luas seluruh permukaannya
+            adalah …
+          </p>
+          <ul class="quiz-options">
             <li>
-              <p>
-                Sebuah prisma segitiga memiliki luas alas 25cm² dan tinggi
-                prisma 10cm, Berapakah volume prisma tersebut?
-              </p>
+              <input type="radio" name="q1" id="q1a" value="a" /><label
+                for="q1a"
+                >a. 240 cm²</label
+              >
             </li>
             <li>
-              <p>Perhatikan gambar prisma A. Hitunglah volumenya (V)!</p>
-              <img
-                src="img_prisma_a.jpg"
-                alt="Prisma A dengan alas segitiga 9cm dan tinggi 11cm, serta tinggi prisma 20cm"
-                class="soal-gambar"
-              />
+              <input type="radio" name="q1" id="q1b" value="b" /><label
+                for="q1b"
+                >b. 300 cm²</label
+              >
             </li>
             <li>
-              <p>Perhatikan gambar prisma B. Hitunglah panjang alasnya (a)!</p>
-              <img
-                src="img_prisma_b.jpg"
-                alt="Prisma B dengan volume 4320, tinggi segitiga 20cm, dan tinggi prisma 24cm"
-                class="soal-gambar"
-              />
+              <input type="radio" name="q1" id="q1c" value="c" /><label
+                for="q1c"
+                >c. 360 cm²</label
+              >
             </li>
-            <li>
-              <p>Perhatikan gambar prisma C. Hitunglah volumenya (V)!</p>
-              <img
-                src="img_prisma_c.jpg"
-                alt="Prisma C dengan alas segitiga 16cm, tinggi segitiga 7cm, dan tinggi prisma 22cm"
-                class="soal-gambar"
-              />
-            </li>
-            <li>
-              <p>Perhatikan gambar prisma D. Hitunglah tingginya (t)!</p>
-              <img
-                src="img_prisma_d.jpg"
-                alt="Prisma D dengan volume 2640, alas segitiga 24cm, dan tinggi segitiga 10cm"
-                class="soal-gambar"
-              />
-            </li>
-          </ol>
+          </ul>
+          <div class="feedback-box" id="feedback1"></div>
         </div>
-      </div>
-      <div class="card lkpd">
-        <h2>📖 Soal Cerita</h2>
-        <p style="font-style: italic; margin-bottom: 20px">
-          Kerjakan soal-soal berikut di buku tulismu!
-        </p>
 
-        <div class="evaluasi-isian">
-          <ol>
+        <div class="quiz-item">
+          <p class="soal">
+            2. Luas alas segitiga prisma adalah 24 cm² dan luas selimutnya 144
+            cm². Maka luas permukaan prisma adalah …
+          </p>
+          <ul class="quiz-options">
             <li>
-              <p>
-                Sebuah akuarium kecil berbentuk prisma segitiga memiliki alas
-                berbentuk segitiga siku-siku dengan panjang sisi siku-sikunya 8
-                cm dan 6 cm. Tinggi akuarium (prisma) adalah 25 cm. Jika bagian
-                atasnya terbuka, berapakah luas permukaan akuarium yang harus
-                diberi kaca?
-              </p>
-              <details class="contoh-jawaban">
-                <summary>Klik untuk melihat contoh pengerjaan</summary>
-                <div>
-                  <p>
-                    <strong>Langkah 1: Cari Luas Alas</strong><br />Luas alas =
-                    ½ × 8 × 6 = 24 cm²
-                  </p>
-                  <p>
-                    <strong
-                      >Langkah 2: Cari Sisi Miring (pakai Pythagoras)</strong
-                    ><br />Sisi miring = √(8² + 6²) = √(64 + 36) = √100 = 10 cm
-                  </p>
-                  <p>
-                    <strong>Langkah 3: Cari Keliling Alas</strong><br />Keliling
-                    alas = 8 + 6 + 10 = 24 cm
-                  </p>
-                  <p>
-                    <strong
-                      >Langkah 4: Cari Luas Permukaan TOTAL (jika
-                      tertutup)</strong
-                    ><br />LP = (2 × Luas Alas) + (Keliling Alas × Tinggi
-                    Prisma)<br />LP = (2 × 24) + (24 × 25) = 48 + 600 = 648 cm²
-                  </p>
-                  <p>
-                    <strong
-                      >Langkah 5: Hitung Luas Kaca (karena atasnya
-                      TERBUKA)</strong
-                    ><br />Karena atasnya terbuka, kita kurangi 1 luas alas.<br />Luas
-                    kaca = LP Total - 1 Luas Alas<br />Luas kaca = 648 − 24 =
-                    624 cm²
-                  </p>
-                  <p><strong>Jawaban: 624 cm²</strong></p>
-                </div>
-              </details>
+              <input type="radio" name="q2" id="q2a" value="a" /><label
+                for="q2a"
+                >a. 168 cm²</label
+              >
             </li>
             <li>
-              <p>
-                Seorang arsitek merancang atap rumah berbentuk prisma segitiga.
-                Alas segitiga atap memiliki panjang alas 8 meter dan tinggi
-                segitiga 6 meter. Panjang rumah (tinggi prisma) adalah 10 meter.
-                Dira ingin menutup seluruh permukaan atap (dua sisi segitiga dan
-                tiga sisi tegak) dengan aluminium. Jika harga aluminium Rp75.000
-                per meter persegi, berapakah biaya yang diperlukan Dira?
-              </p>
+              <input type="radio" name="q2" id="q2b" value="b" /><label
+                for="q2b"
+                >b. 192 cm²</label
+              >
             </li>
             <li>
-              <p>
-                (Pythagoras) Sebuah tenda kemah berbentuk prisma segitiga. Alas
-                tenda (bagian depan) berbentuk segitiga sama kaki dengan panjang
-                sisi miring (kaki) 5 m dan panjang alasnya 6 m. Jika panjang
-                tenda (tinggi prisma) adalah 8 m, berapa volume udara di dalam
-                tenda tersebut?
-              </p>
+              <input type="radio" name="q2" id="q2c" value="c" /><label
+                for="q2c"
+                >c. 312 cm²</label
+              >
             </li>
-            <li>
-              <p>
-                (Rasio) Prisma A memiliki alas segitiga dengan panjang alas 5 cm
-                dan tinggi 6 cm. Prisma B memiliki alas segitiga dengan panjang
-                alas 10 cm dan tinggi 12 cm. Jika tinggi kedua prisma tersebut
-                sama, berapa kali lipat perbandingan volume Prisma B terhadap
-                Prisma A?
-              </p>
-            </li>
-            <li>
-              <p>
-                (HOTS) Sebuah palung air minum ternak berbentuk prisma segitiga
-                sama kaki yang diletakkan "tertidur". Panjang palung (tinggi
-                prisma) adalah 3 meter. Alas segitiga memiliki lebar 80 cm dan
-                tinggi 60 cm. Jika palung tersebut diisi air hingga ketinggian
-                air mencapai 30 cm (setengah dari tinggi segitiga), berapakah
-                volume air di dalam palung tersebut (dalam liter)? (Petunjuk:
-                Gunakan konsep kesebangunan segitiga).
-              </p>
-            </li>
-          </ol>
+          </ul>
+          <div class="feedback-box" id="feedback2"></div>
         </div>
-      </div>
 
-      <div class="card lkpd">
-        <h2>🧠 Soal Evaluasi</h2>
+        <div class="quiz-item">
+          <p class="soal">
+            3. Keliling alas sebuah prisma segitiga adalah 25 cm. Jika tinggi
+            prisma tersebut 10 cm, berapakah luas selimutnya?
+          </p>
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q3" id="q3a" value="a" /><label
+                for="q3a"
+                >a. 250 cm²</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q3" id="q3b" value="b" /><label
+                for="q3b"
+                >b. 35 cm²</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q3" id="q3c" value="c" /><label
+                for="q3c"
+                >c. 2.5 cm²</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback3"></div>
+        </div>
 
-        <h3>A. Pilihan Ganda (Interaktif)</h3>
-        <p style="font-style: italic; margin-bottom: 20px">
-          Pilih jawaban yang paling tepat!
-        </p>
+        <button type="button" class="quiz-btn" id="cek-lkpd-luas">
+          Cek Jawaban Luas
+        </button>
+
+        <hr class="pemisah-lkpd" />
+
+        <h3>B. LKPD Volume Prisma Segitiga</h3>
+        <ul class="tujuan-list" style="margin-bottom: 20px">
+          <li>Siswa dapat menghitung volume prisma segitiga.</li>
+          <li>
+            Siswa dapat menentukan komponen volume (seperti alas atau tinggi)
+            jika volume diketahui.
+          </li>
+        </ul>
+
+        <div class="quiz-item">
+          <p class="soal">
+            1. Perhatikan gambar prisma A. Hitunglah volumenya (V)!
+          </p>
+          <img
+            src="img_prisma_a.jpg"
+            alt="Prisma A dengan alas segitiga 9cm dan tinggi 11cm, serta tinggi prisma 20cm"
+            class="soal-gambar"
+          />
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q4" id="q4a" value="a" /><label
+                for="q4a"
+                >a. 990 cm³</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q4" id="q4b" value="b" /><label
+                for="q4b"
+                >b. 1980 cm³</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q4" id="q4c" value="c" /><label
+                for="q4c"
+                >c. 495 cm³</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback4"></div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="soal">
+            2. Perhatikan gambar prisma B. Hitunglah panjang alasnya (a)!
+          </p>
+          <img
+            src="img_prisma_b.jpg"
+            alt="Prisma B dengan volume 4320, tinggi segitiga 20cm, dan tinggi prisma 24cm"
+            class="soal-gambar"
+          />
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q5" id="q5a" value="a" /><label
+                for="q5a"
+                >a. 15 cm</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q5" id="q5b" value="b" /><label
+                for="q5b"
+                >b. 18 cm</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q5" id="q5c" value="c" /><label
+                for="q5c"
+                >c. 24 cm</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback5"></div>
+        </div>
+
+        <div class="quiz-item">
+          <p class="soal">
+            3. Perhatikan gambar prisma D. Hitunglah tingginya (t)!
+          </p>
+          <img
+            src="img_prisma_d.jpg"
+            alt="Prisma D dengan volume 2640, alas segitiga 24cm, dan tinggi segitiga 10cm"
+            class="soal-gambar"
+          />
+          <ul class="quiz-options">
+            <li>
+              <input type="radio" name="q6" id="q6a" value="a" /><label
+                for="q6a"
+                >a. 20 cm</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q6" id="q6b" value="b" /><label
+                for="q6b"
+                >b. 24 cm</label
+              >
+            </li>
+            <li>
+              <input type="radio" name="q6" id="q6c" value="c" /><label
+                for="q6c"
+                >c. 22 cm</label
+              >
+            </li>
+          </ul>
+          <div class="feedback-box" id="feedback6"></div>
+        </div>
+
+        <button type="button" class="quiz-btn" id="cek-lkpd-volume">
+          Cek Jawaban Volume
+        </button>
+
+        <hr class="pemisah-lkpd" />
+
+        <h3>C. LKPD Soal Cerita</h3>
+        <ul class="tujuan-list" style="margin-bottom: 20px">
+          <li>Siswa dapat memecahkan masalah soal cerita terkait volume.</li>
+          <li>
+            Siswa dapat memecahkan masalah soal cerita terkait Pythagoras.
+          </li>
+        </ul>
 
         <div class="quiz-item">
           <p class="soal">
@@ -413,37 +421,25 @@
           </p>
           <ul class="quiz-options">
             <li>
-              <input type="radio" name="q-geo-1" id="qg1a" value="a" /><label
-                for="qg1a"
+              <input type="radio" name="q7" id="q7a" value="a" /><label
+                for="q7a"
                 >a. 60 cm³</label
               >
             </li>
             <li>
-              <input type="radio" name="q-geo-1" id="qg1b" value="b" /><label
-                for="qg1b"
+              <input type="radio" name="q7" id="q7b" value="b" /><label
+                for="q7b"
                 >b. 120 cm³</label
               >
             </li>
             <li>
-              <input type="radio" name="q-geo-1" id="qg1c" value="c" /><label
-                for="qg1c"
+              <input type="radio" name="q7" id="q7c" value="c" /><label
+                for="q7c"
                 >c. 240 cm³</label
               >
             </li>
-            <li>
-              <input type="radio" name="q-geo-1" id="qg1d" value="d" /><label
-                for="qg1d"
-                >d. 100 cm³</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-1" id="qg1e" value="e" /><label
-                for="qg1e"
-                >e. 80 cm³</label
-              >
-            </li>
           </ul>
-          <div class="feedback-box" id="feedback-geo-1"></div>
+          <div class="feedback-box" id="feedback7"></div>
         </div>
 
         <div class="quiz-item">
@@ -453,206 +449,60 @@
           </p>
           <ul class="quiz-options">
             <li>
-              <input type="radio" name="q-geo-2" id="qg2a" value="a" /><label
-                for="qg2a"
+              <input type="radio" name="q8" id="q8a" value="a" /><label
+                for="q8a"
                 >a. 360 cm³</label
               >
             </li>
             <li>
-              <input type="radio" name="q-geo-2" id="qg2b" value="b" /><label
-                for="qg2b"
+              <input type="radio" name="q8" id="q8b" value="b" /><label
+                for="q8b"
                 >b. 42 cm³</label
               >
             </li>
             <li>
-              <input type="radio" name="q-geo-2" id="qg2c" value="c" /><label
-                for="qg2c"
+              <input type="radio" name="q8" id="q8c" value="c" /><label
+                for="q8c"
                 >c. 180 cm³</label
               >
             </li>
-            <li>
-              <input type="radio" name="q-geo-2" id="qg2d" value="d" /><label
-                for="qg2d"
-                >d. 300 cm³</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-2" id="qg2e" value="e" /><label
-                for="qg2e"
-                >e. 90 cm³</label
-              >
-            </li>
           </ul>
-          <div class="feedback-box" id="feedback-geo-2"></div>
+          <div class="feedback-box" id="feedback8"></div>
         </div>
 
         <div class="quiz-item">
           <p class="soal">
-            3. Diketahui prisma segitiga memiliki panjang rusuk alas 5 cm, 12
-            cm, dan 13 cm (ini adalah segitiga siku-siku) dengan tinggi prisma 8
-            cm. Luas seluruh permukaannya adalah …
+            3. (Pythagoras) Sebuah tenda kemah berbentuk prisma segitiga. Alas
+            tenda (depan) berbentuk segitiga sama kaki dengan sisi miring (kaki)
+            5 m dan panjang alasnya 6 m. Jika panjang tenda (tinggi prisma)
+            adalah 8 m, berapa volume udara di dalam tenda?
           </p>
           <ul class="quiz-options">
             <li>
-              <input type="radio" name="q-geo-3" id="qg3a" value="a" /><label
-                for="qg3a"
-                >a. 382 cm²</label
+              <input type="radio" name="q9" id="q9a" value="a" /><label
+                for="q9a"
+                >a. 48 m³</label
               >
             </li>
             <li>
-              <input type="radio" name="q-geo-3" id="qg3b" value="b" /><label
-                for="qg3b"
-                >b. 370 cm²</label
+              <input type="radio" name="q9" id="q9b" value="b" /><label
+                for="q9b"
+                >b. 96 m³</label
               >
             </li>
             <li>
-              <input type="radio" name="q-geo-3" id="qg3c" value="c" /><label
-                for="qg3c"
-                >c. 392 cm²</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-3" id="qg3d" value="d" /><label
-                for="qg3d"
-                >d. 400 cm²</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-3" id="qg3e" value="e" /><label
-                for="qg3e"
-                >e. 300 cm²</label
+              <input type="radio" name="q9" id="q9c" value="c" /><label
+                for="q9c"
+                >c. 120 m³</label
               >
             </li>
           </ul>
-          <div class="feedback-box" id="feedback-geo-3"></div>
+          <div class="feedback-box" id="feedback9"></div>
         </div>
 
-        <div class="quiz-item">
-          <p class="soal">
-            4. Luas alas segitiga prisma adalah 24 cm² dan luas selimutnya 144
-            cm². Maka luas permukaan prisma adalah …
-          </p>
-          <ul class="quiz-options">
-            <li>
-              <input type="radio" name="q-geo-4" id="qg4a" value="a" /><label
-                for="qg4a"
-                >a. 168 cm²</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-4" id="qg4b" value="b" /><label
-                for="qg4b"
-                >b. 192 cm²</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-4" id="qg4c" value="c" /><label
-                for="qg4c"
-                >c. 180 cm²</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-4" id="qg4d" value="d" /><label
-                for="qg4d"
-                >d. 200 cm²</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-4" id="qg4e" value="e" /><label
-                for="qg4e"
-                >e. 210 cm²</label
-              >
-            </li>
-          </ul>
-          <div class="feedback-box" id="feedback-geo-4"></div>
-        </div>
-
-        <div class="quiz-item">
-          <p class="soal">
-            5. Sebuah prisma segitiga memiliki alas berbentuk segitiga sama sisi
-            dengan panjang sisi 10 cm dan tinggi segitiga 8,7 cm. Jika tinggi
-            prisma 15 cm, maka volumenya adalah …
-          </p>
-          <ul class="quiz-options">
-            <li>
-              <input type="radio" name="q-geo-5" id="qg5a" value="a" /><label
-                for="qg5a"
-                >a. 870 cm³</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-5" id="qg5b" value="b" /><label
-                for="qg5b"
-                >b. 652,5 cm³</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-5" id="qg5c" value="c" /><label
-                for="qg5c"
-                >c. 900 cm³</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-5" id="qg5d" value="d" /><label
-                for="qg5d"
-                >d. 500 cm³</label
-              >
-            </li>
-            <li>
-              <input type="radio" name="q-geo-5" id="qg5e" value="e" /><label
-                for="qg5e"
-                >e. 1.200 cm³</label
-              >
-            </li>
-          </ul>
-          <div class="feedback-box" id="feedback-geo-5"></div>
-        </div>
-
-        <button id="cek-jawaban-geo" class="quiz-btn">Cek Semua Jawaban</button>
-        <div id="skor-total-geo" class="skor-total" style="display: none"></div>
-
-        <hr class="pemisah-lkpd" />
-
-        <h3>B. Esai</h3>
-        <p style="font-style: italic; margin-bottom: 20px">
-          Kerjakan soal-soal berikut di buku tulismu!
-        </p>
-        <div class="evaluasi-isian">
-          <ol>
-            <li>
-              <p>
-                Hitunglah volume prisma segitiga yang memiliki alas segitiga
-                dengan alas 10 cm, tinggi 6 cm, dan tinggi prisma 12 cm.
-              </p>
-            </li>
-            <li>
-              <p>
-                Sebuah prisma segitiga memiliki luas permukaan 320 cm² dan luas
-                alas 50 cm². Hitung luas selimutnya.
-              </p>
-            </li>
-            <li>
-              <p>
-                Diketahui alas segitiga prisma berupa segitiga siku-siku dengan
-                sisi-sisi siku 9 cm dan 12 cm. Jika tinggi prisma 20 cm,
-                tentukan volumenya.
-              </p>
-            </li>
-            <li>
-              <p>
-                Sebuah prisma segitiga memiliki alas berbentuk segitiga sama
-                kaki dengan panjang alas 10 cm dan tinggi 8 cm. Jika tinggi
-                prisma 15 cm, tentukan luas permukaannya.
-              </p>
-            </li>
-            <li>
-              <p>
-                Buatlah prisma segitiga pada kertas dan jelaskan bagian-bagian
-                prisma tersebut (alas, sisi tegak, dan tinggi prisma).
-              </p>
-            </li>
-          </ol>
-        </div>
+        <button type="button" class="quiz-btn" id="cek-lkpd-cerita">
+          Cek Jawaban Soal Cerita
+        </button>
       </div>
     </main>
 
@@ -662,84 +512,106 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Ambil tombol cek jawaban
-        const cekButtonGeo = document.getElementById("cek-jawaban-geo");
+        // Kunci jawaban tetap sama, hanya cara panggilnya berbeda
+        const correctAnswers = {
+          q1: "b", // 300
+          q2: "b", // 192
+          q3: "a", // 250
+          q4: "a", // 990
+          q5: "b", // 18
+          q6: "c", // 22
+          q7: "b", // 120
+          q8: "a", // 360
+          q9: "b", // 96
+        };
 
-        if (cekButtonGeo) {
-          cekButtonGeo.addEventListener("click", function () {
-            // Definisikan jawaban yang benar
-            const correctAnswersGeo = {
-              "q-geo-1": "b", // 120 cm³
-              "q-geo-2": "a", // 360 cm³
-              "q-geo-3": "e", // 300 cm² (Pilihan saya perbaiki)
-              "q-geo-4": "b", // 192 cm²
-              "q-geo-5": "b", // 652,5 cm³
-            };
+        const feedbackMessages = {
+          correct: "Kerja Bagus! Jawabanmu Benar! 👍",
+          incorrect: {
+            q1: "Yah, belum tepat. Jawaban yang benar adalah b (300 cm²).",
+            q2: "Yah, belum tepat. Jawaban yang benar adalah b (192 cm²).",
+            q3: "Yah, belum tepat. Jawaban yang benar adalah a (250 cm²).",
+            q4: "Yah, belum tepat. Jawaban yang benar adalah a (990 cm³).",
+            q5: "Yah, belum tepat. Jawaban yang benar adalah b (18 cm).",
+            q6: "Yah, belum tepat. Jawaban yang benar adalah c (22 cm).",
+            q7: "Yah, belum tepat. Jawaban yang benar adalah b (120 cm³).",
+            q8: "Yah, belum tepat. Jawaban yang benar adalah a (360 cm³).",
+            q9: "Yah, belum tepat. Jawaban yang benar adalah b (96 m³).",
+          },
+          noAnswer: "Oops, kamu belum memilih jawaban!",
+        };
 
-            // Pesan feedback (opsional, bisa disederhanakan)
-            const feedbackMessages = {
-              "q-geo-1": "Jawaban benar! V = (½ × 6 × 4) × 10 = 120 cm³.",
-              "q-geo-2": "Jawaban benar! V = 30 × 12 = 360 cm³.",
-              "q-geo-3":
-                "Jawaban benar! LP = (2 × (½×5×12)) + ((5+12+13) × 8) = 60 + 240 = 300 cm².",
-              "q-geo-4":
-                "Jawaban benar! LP = (2 × Luas Alas) + Luas Selimut = (2 × 24) + 144 = 192 cm².",
-              "q-geo-5": "Jawaban benar! V = (½ × 10 × 8.7) × 15 = 652,5 cm³.",
-            };
-
-            const incorrectFeedback = {
-              "q-geo-1":
-                "Yah, belum tepat. Jawaban yang benar adalah b (120 cm³).",
-              "q-geo-2":
-                "Yah, belum tepat. Jawaban yang benar adalah a (360 cm³).",
-              "q-geo-3":
-                "Yah, belum tepat. Jawaban yang benar adalah e (300 cm²).",
-              "q-geo-4":
-                "Yah, belum tepat. Jawaban yang benar adalah b (192 cm²).",
-              "q-geo-5":
-                "Yah, belum tepat. Jawaban yang benar adalah b (652,5 cm³).",
-            };
-
-            let skor = 0;
-            const totalSoal = 5;
-
-            // Loop melalui 5 soal
-            for (let i = 1; i <= totalSoal; i++) {
-              const questionName = "q-geo-" + i;
-              const selectedOption = document.querySelector(
-                'input[name="' + questionName + '"]:checked'
-              );
-              const feedbackBox = document.getElementById("feedback-geo-" + i);
-              const correctAnswer = correctAnswersGeo[questionName];
-
-              if (selectedOption) {
-                const userAnswer = selectedOption.value;
-                if (userAnswer === correctAnswer) {
-                  skor++;
-                  feedbackBox.textContent =
-                    feedbackMessages[questionName] ||
-                    "Kerja Bagus! Jawabanmu Benar! 👍";
-                  feedbackBox.className = "feedback-box correct";
-                } else {
-                  feedbackBox.textContent =
-                    incorrectFeedback[questionName] || "Yah, belum tepat.";
-                  feedbackBox.className = "feedback-box incorrect";
-                }
-              } else {
-                feedbackBox.textContent = "Oops, kamu belum memilih jawaban!";
-                feedbackBox.className = "feedback-box incorrect";
-              }
-              feedbackBox.style.display = "block";
+        // --- Fungsi Helper untuk Cek Soal ---
+        // (start = nomor soal awal, end = nomor soal akhir)
+        function cekBagian(start, end, alertMessage) {
+          let allAnswered = true;
+          // Validasi dulu
+          for (let i = start; i <= end; i++) {
+            if (!document.querySelector('input[name="q' + i + '"]:checked')) {
+              allAnswered = false;
+              break;
             }
+          }
 
-            // Tampilkan skor total
-            const skorTotalBox = document.getElementById("skor-total-geo");
-            skorTotalBox.textContent =
-              "Skor Anda: " + skor + " dari " + totalSoal + " soal benar.";
-            skorTotalBox.className = "skor-total"; // Gunakan class untuk styling
-            skorTotalBox.style.display = "block";
-          });
+          if (!allAnswered) {
+            alert(alertMessage);
+            return; // Hentikan jika ada yg kosong
+          }
+
+          // Jika semua terisi, cek jawaban
+          for (let i = start; i <= end; i++) {
+            const questionName = "q" + i;
+            const selectedOption = document.querySelector(
+              'input[name="' + questionName + '"]:checked'
+            );
+            const feedbackBox = document.getElementById("feedback" + i);
+            const userAnswer = selectedOption.value;
+            const correctAnswer = correctAnswers[questionName];
+
+            if (userAnswer === correctAnswer) {
+              feedbackBox.textContent = feedbackMessages.correct;
+              feedbackBox.className = "feedback-box correct";
+            } else {
+              feedbackBox.textContent =
+                feedbackMessages.incorrect[questionName];
+              feedbackBox.className = "feedback-box incorrect";
+            }
+            feedbackBox.style.display = "block";
+          }
         }
+
+        // --- Tombol 1: LKPD LUAS (Soal 1-3) ---
+        document
+          .getElementById("cek-lkpd-luas")
+          .addEventListener("click", function () {
+            cekBagian(
+              1,
+              3,
+              "Oops, jawab dulu semua soal di Bagian A (Luas) ya!"
+            );
+          });
+
+        // --- Tombol 2: LKPD VOLUME (Soal 4-6) ---
+        document
+          .getElementById("cek-lkpd-volume")
+          .addEventListener("click", function () {
+            cekBagian(
+              4,
+              6,
+              "Oops, jawab dulu semua soal di Bagian B (Volume) ya!"
+            );
+          });
+
+        // --- Tombol 3: LKPD SOAL CERITA (Soal 7-9) ---
+        document
+          .getElementById("cek-lkpd-cerita")
+          .addEventListener("click", function () {
+            cekBagian(
+              7,
+              9,
+              "Oops, jawab dulu semua soal di Bagian C (Soal Cerita) ya!"
+            );
+          });
       });
     </script>
 
