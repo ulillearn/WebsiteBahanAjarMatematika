@@ -35,6 +35,15 @@
           margin-bottom: 15px;
         }
       }
+
+      /* CSS untuk pemisah sub-materi (jika masih diperlukan, 
+         tapi kita ganti ke pemisah-lkpd agar konsisten) */
+      hr.pemisah-sub-materi {
+        margin: 25px auto;
+        border: none;
+        width: 80%;
+        border-top: 2px dashed #e0e0e0; /* Garis tipis putus-putus */
+      }
     </style>
   </head>
   <body>
@@ -67,12 +76,34 @@
       </div>
 
       <div class="card">
+        <h2>🎯 Tujuan Kita di Bab Ini</h2>
+        <ul class="tujuan-list">
+          <li>
+            Bisa menghitung <strong>Luas Permukaan</strong> prisma segitiga
+            (seperti menghitung kain untuk tenda).
+          </li>
+          <li>
+            Bisa menghitung <strong>Volume</strong> prisma segitiga (seperti
+            menghitung udara di dalam tenda).
+          </li>
+          <li>
+            Bisa memecahkan <strong>soal cerita</strong> yang berhubungan dengan
+            prisma segitiga.
+          </li>
+          <li>
+            Menjadi lebih teliti dan bertanggung jawab saat mengerjakan soal!
+          </li>
+        </ul>
+      </div>
+      <div class="card">
         <h2>📚 Yuk, Pahami Materinya!</h2>
 
         <h3>1. Apa itu Prisma?</h3>
         <p>
-          Prisma adalah bangun ruang 3D yang punya 2 sisi "kembar" yang sejajar.
-          Coba bayangkan potongan kue keju, tenda kemah, atau atap rumah.
+          Prisma adalah bangun ruang tiga dimensi yang dibatasi oleh dua bidang
+          yang sejajar dan kongruen (sama bentuk dan ukuran) yang disebut alas
+          dan tutup, serta beberapa bidang tegak (sisi selimut) yang
+          menghubungkan kedua bidang tersebut.
         </p>
         <img
           src="img_materi_11.jpg"
@@ -116,14 +147,13 @@
           </li>
           <li>
             <strong>Rusuk</strong>
-            <br />Prisma segitiga punya <strong>9 rusuk</strong> (rangka).
-            Terdiri dari 3 rusuk di alas, 3 rusuk di tutup, dan 3 rusuk tegak.
+            <br />Prisma segitiga punya <strong>9 rusuk</strong>. Terdiri dari 3
+            rusuk di alas, 3 rusuk di tutup, dan 3 rusuk tegak.
           </li>
           <li>
             <strong>Titik Sudut</strong>
-            <br />Prisma segitiga punya
-            <strong>6 titik sudut</strong> (pojokan). Terdiri dari 3 titik sudut
-            di alas dan 3 titik sudut di tutup.
+            <br />Prisma segitiga punya <strong>6 titik sudut</strong>. Terdiri
+            dari 3 titik sudut di alas dan 3 titik sudut di tutup.
           </li>
         </ul>
 
@@ -144,7 +174,31 @@
 
         <hr class="pemisah-lkpd" />
 
-        <h3>3. Rumus Luas Permukaan (LP)</h3>
+        <h3>3. Ciri-Ciri Umum Prisma</h3>
+        <p>
+          Semua prisma punya ciri-ciri umum yang bisa dihitung pakai rumus, lho!
+        </p>
+        <p>
+          Jika alasnya berbentuk segi-n (misalnya, segitiga berarti n=3,
+          segiempat berarti n=4, dan seterusnya), maka:
+        </p>
+        <ul>
+          <li>Jumlah Sisi = <strong>n + 2</strong></li>
+          <li>Jumlah Rusuk = <strong>3 × n</strong></li>
+          <li>Jumlah Titik Sudut = <strong>2 × n</strong></li>
+        </ul>
+        <p>
+          <strong>Contoh Pembuktian (Prisma Segitiga, n=3):</strong>
+        </p>
+        <ul>
+          <li>Sisi = 3 + 2 = <strong>5 sisi</strong> (Benar!)</li>
+          <li>Rusuk = 3 × 3 = <strong>9 rusuk</strong> (Benar!)</li>
+          <li>Titik Sudut = 2 × 3 = <strong>6 titik sudut</strong> (Benar!)</li>
+        </ul>
+
+        <hr class="pemisah-lkpd" />
+
+        <h3>4. Rumus Luas Permukaan (LP)</h3>
         <p>
           Luas permukaan adalah jumlah seluruh luas sisi-sisinya (alas, atas,
           dan 3 sisi tegak). Bayangkan kamu membungkus kado prisma, kita harus
@@ -173,9 +227,62 @@
           </li>
         </ul>
 
+        <h4 style="margin-top: 25px">Contoh Soal Luas Permukaan</h4>
+        <div class="evaluasi-isian" style="margin-top: 15px">
+          <p style="font-size: 16px; margin-bottom: 15px">
+            Sebuah prisma memiliki alas berbentuk segitiga (siku-siku) dengan
+            alas 8 cm dan tinggi segitiga 6 cm. Sisi miring alas adalah 10 cm.
+            Panjang rusuk tegak (tinggi prisma) adalah 10 cm. Hitunglah luas
+            permukaan prisma!
+          </p>
+          <details class="contoh-jawaban">
+            <summary>Klik untuk melihat Pembahasan</summary>
+            <div style="font-family: 'Poppins', sans-serif">
+              <p>
+                <strong>1. Hitung Luas Alas (Segitiga)</strong><br />
+                <code>
+                  Luas Alas =
+                  <span class="frac"><sup>1</sup><sub>2</sub></span> × alas ×
+                  tinggi
+                </code>
+                <br />
+                <code>
+                  Luas Alas =
+                  <span class="frac"><sup>1</sup><sub>2</sub></span> × 8 cm × 6
+                  cm = 24 cm²
+                </code>
+              </p>
+              <p>
+                <strong>2. Hitung Luas Dua Alas (Alas + Tutup)</strong><br />
+                <code>Luas Dua Alas = 2 × 24 cm² = 48 cm²</code>
+              </p>
+              <p>
+                <strong>3. Hitung Keliling Alas</strong><br />
+                <code>Keliling Alas = 8 cm + 6 cm + 10 cm = 24 cm</code>
+              </p>
+              <p>
+                <strong>4. Hitung Luas Selimut</strong><br />
+                <code> Luas Selimut = Keliling Alas × Tinggi Prisma </code>
+                <br />
+                <code>Luas Selimut = 24 cm × 10 cm = 240 cm²</code>
+              </p>
+              <p>
+                <strong>5. Hitung Luas Permukaan Total</strong><br />
+                <code>LP = Luas Dua Alas + Luas Selimut</code><br />
+                <code>LP = 48 cm² + 240 cm² = 288 cm²</code>
+              </p>
+              <p>
+                <strong
+                  >Jadi, luas permukaan prisma tersebut adalah 288 cm².</strong
+                >
+              </p>
+            </div>
+          </details>
+        </div>
+
         <hr class="pemisah-lkpd" />
 
-        <h3>4. Rumus Volume (V)</h3>
+        <h3>5. Rumus Volume (V)</h3>
         <p>
           Volume adalah "isi" dari bangun ruang itu (misalnya, berapa banyak
           udara di dalam tenda).
@@ -197,9 +304,45 @@
           </li>
         </ul>
 
+        <h4 style="margin-top: 25px">Contoh Soal Volume</h4>
+        <div class="evaluasi-isian" style="margin-top: 15px">
+          <p style="font-size: 16px; margin-bottom: 15px">
+            Sebuah prisma segitiga memiliki alas berbentuk segitiga dengan alas
+            8 cm dan tinggi segitiga 5 cm. Tinggi prisma adalah 12 cm. Hitunglah
+            volume prisma tersebut!
+          </p>
+          <details class="contoh-jawaban">
+            <summary>Klik untuk melihat Pembahasan</summary>
+            <div style="font-family: 'Poppins', sans-serif">
+              <p>
+                <strong>1. Hitung Luas Alas (Segitiga)</strong><br />
+                <code>
+                  Luas Alas =
+                  <span class="frac"><sup>1</sup><sub>2</sub></span> × alas ×
+                  tinggi
+                </code>
+                <br />
+                <code>
+                  Luas Alas =
+                  <span class="frac"><sup>1</sup><sub>2</sub></span> × 8 cm × 5
+                  cm = 20 cm²
+                </code>
+              </p>
+              <p>
+                <strong>2. Hitung Volume Prisma</strong><br />
+                <code>Volume = Luas Alas × Tinggi Prisma</code><br />
+                <code>Volume = 20 cm² × 12 cm = 240 cm³</code>
+              </p>
+              <p>
+                <strong>Jadi, volume prisma tersebut adalah 240 cm³.</strong>
+              </p>
+            </div>
+          </details>
+        </div>
+
         <hr class="pemisah-lkpd" />
 
-        <h3>5. Penjelasan Volume dari Bangun Ruang Balok</h3>
+        <h4>Penjelasan Volume dari Bangun Ruang Balok</h4>
         <p>
           Ada cara lain untuk memahami rumus volume prisma, yaitu dengan
           membandingkannya dengan balok!
@@ -208,7 +351,6 @@
           Bayangkan sebuah balok. Rumus volumenya adalah:
           <code>Volume Balok = Panjang × Lebar × Tinggi</code>
         </p>
-
         <img
           src="img_kubus_volume.png"
           alt="Ilustrasi balok yang dibagi menjadi dua prisma segitiga"
@@ -229,12 +371,14 @@
           dari volume balok tersebut.
         </p>
 
-        <div class="rumus-box">
-          Volume Prisma = <span class="frac"><sup>1</sup><sub>2</sub></span> ×
-          Volume Balok
-          <br />
-          Volume Prisma = <span class="frac"><sup>1</sup><sub>2</sub></span> ×
-          (Panjang × Lebar × Tinggi)
+        <div class="rumus-box" style="text-align: left">
+          <div style="display: inline-block; text-align: left">
+            Volume Prisma = <span class="frac"><sup>1</sup><sub>2</sub></span> ×
+            Volume Balok
+            <br />
+            Volume Prisma = <span class="frac"><sup>1</sup><sub>2</sub></span> ×
+            (Panjang × Lebar × Tinggi)
+          </div>
         </div>
 
         <p>
@@ -289,8 +433,6 @@
       <div class="card lkpd">
         <h2>🧠 LKPD Interaktif: Prisma Segitiga</h2>
         <p>Ayo uji pemahamanmu! Selesaikan 3 bagian latihan di bawah ini.</p>
-
-        <hr class="pemisah-lkpd" />
 
         <h3>A. LKPD Luas Prisma Segitiga</h3>
         <ul class="tujuan-list" style="margin-bottom: 20px">
@@ -608,7 +750,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Kunci jawaban tetap sama, hanya cara panggilnya berbeda
+        // Kunci jawaban
         const correctAnswers = {
           q1: "b", // 300
           q2: "b", // 192
@@ -621,6 +763,7 @@
           q9: "b", // 96
         };
 
+        // Pesan Feedback
         const feedbackMessages = {
           correct: "Kerja Bagus! Jawabanmu Benar! 👍",
           incorrect: {
@@ -638,10 +781,9 @@
         };
 
         // --- Fungsi Helper untuk Cek Soal ---
-        // (start = nomor soal awal, end = nomor soal akhir)
         function cekBagian(start, end, alertMessage) {
           let allAnswered = true;
-          // Validasi dulu
+          // Validasi
           for (let i = start; i <= end; i++) {
             if (!document.querySelector('input[name="q' + i + '"]:checked')) {
               allAnswered = false;

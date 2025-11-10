@@ -89,7 +89,7 @@ body {
   color: white;
 }
 
-/* --- Navigasi Dropdown --- */
+/* --- Navigasi Dropdown (REVISI) --- */
 .nav-dropdown {
   position: relative;
   display: inline-block;
@@ -103,32 +103,44 @@ body {
 .nav-dropdown .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: var(
+    --warna-kartu
+  ); /* REVISI: Latar belakang putih bersih */
   min-width: 220px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--bayangan-kartu); /* REVISI: Bayangan konsisten */
   z-index: 100;
-  border-radius: 5px;
+  border-radius: 8px; /* REVISI: Radius lebih besar */
   margin-top: 5px;
+  border: 1px solid #f0f0f0; /* REVISI: Border tipis */
+  padding: 4px 0; /* REVISI: Jarak di dalam kotak */
 }
 
 .nav-dropdown .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+  color: var(--warna-teks); /* REVISI: Warna teks konsisten */
+  padding: 10px 20px; /* REVISI: Padding lebih rapi */
   text-decoration: none;
   display: block;
   text-align: left;
-  font-weight: 400;
+  font-weight: 500; /* REVISI: Sedikit lebih tebal */
   font-size: 0.9rem;
   background-color: transparent;
   white-space: normal;
+  transition: all 0.2s ease; /* REVISI: Transisi halus */
 }
 
 .nav-dropdown .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #e6f7ff; /* REVISI: Warna hover biru muda */
+  color: var(--warna-dasar-gelap); /* REVISI: Warna teks biru tua */
 }
 
 .nav-dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* --- PERBAIKAN UNTUK DROPDOWN KANAN --- */
+.nav-dropdown:last-child .dropdown-content {
+  right: 0; /* Paksa dropdown rata kanan */
+  left: auto; /* Nonaktifkan rata kiri default */
 }
 
 /* --- Hero Section Beranda --- */
