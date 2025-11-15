@@ -40,6 +40,7 @@
         font-weight: 600;
         color: #0084ff;
         letter-spacing: 0.5px;
+        margin-bottom: 5px; /* Jarak ke judul utama */
       }
 
       /* Gaya Judul Utama (Putih dengan outline Navy) */
@@ -51,38 +52,58 @@
         text-stroke: 1.5px #0056b3;
         text-shadow: 3px 3px 0 #0056b3;
         paint-order: stroke fill;
-        margin: 10px 0 15px;
+        margin: 10px 0 25px; /* Jarak bawah ditambah */
         line-height: 1.2;
       }
 
-      .beranda-subtitle-bottom {
-        font-size: 1.1rem;
-        color: #333;
-        margin-bottom: 25px;
+      /* --- STYLE UNTUK MATA KULIAH & DOSEN SESUAI GAMBAR TERBARU --- */
+      .beranda-info-group {
+        margin-bottom: 25px; /* Jarak ke kotak kelompok */
+        line-height: 1.8; /* Jarak antar baris */
       }
 
+      .beranda-info-group p {
+        font-size: 0.95rem; /* Ukuran font umum */
+        color: #333; /* Warna teks gelap */
+        margin: 0; /* Hapus margin default paragraf */
+      }
+
+      .beranda-info-group p strong {
+        font-weight: 700; /* Nama dosen lebih tebal */
+        color: #0056b3; /* Warna navy untuk nama dosen */
+      }
+      /* --- AKHIR STYLE MATKUL & DOSEN --- */
+
+      /* --- STYLE UNTUK KOTAK KELOMPOK SESUAI GAMBAR --- */
       .beranda-kelompok {
-        background: #ffffffd9;
-        border: 2px dashed #0084ff;
+        background: #ffffff; /* Latar belakang putih solid */
+        border: 2px dashed #0084ff; /* Border dashed biru */
         border-radius: 10px;
-        padding: 15px 20px;
-        display: inline-block;
+        padding: 20px 25px; /* Padding disesuaikan */
+        display: inline-block; /* Agar kotak tidak selebar layar */
+        text-align: left; /* Memastikan teks rata kiri */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+        width: fit-content; /* Lebar sesuai konten */
+        /* Hapus margin-top jika tidak diperlukan */
       }
 
       .beranda-kelompok h3 {
-        margin: 0 0 8px;
-        color: #0056b3;
+        font-size: 1.1rem; /* Ukuran judul "Kelompok 7" */
+        font-weight: 700;
+        color: #0056b3; /* Warna navy untuk judul kelompok */
+        margin: 0 0 10px; /* Jarak bawah dari judul kelompok */
       }
 
       .beranda-kelompok ul {
-        list-style: none;
+        list-style: none; /* Hapus bullet default */
         margin: 0;
         padding: 0;
       }
 
       .beranda-kelompok li {
-        font-size: 0.95rem;
+        font-size: 0.9rem; /* Ukuran font nama anggota */
         color: #444;
+        line-height: 1.6;
       }
 
       /* Gambar Kanan */
@@ -112,6 +133,23 @@
         .beranda-hero {
           padding: 30px 20px;
         }
+        /* Memastikan elemen info dan kelompok di tengah */
+        .hero-content {
+          text-align: center;
+        }
+        .beranda-kelompok {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .beranda-info-group p {
+          font-size: 0.9rem;
+        }
+        .beranda-kelompok h3 {
+          font-size: 1rem;
+        }
+        .beranda-kelompok li {
+          font-size: 0.85rem;
+        }
       }
     </style>
   </head>
@@ -124,12 +162,17 @@
         <div class="hero-content">
           <p class="beranda-subtitle-top">Bilangan dan Geometri</p>
           <h1 class="beranda-title">Bilangan Bulat &<br />Prisma Segitiga</h1>
-          <p class="beranda-subtitle-bottom">
-            Mata Kuliah Pengembangan Matematika SD
-          </p>
+
+          <div class="beranda-info-group">
+            <p>Mata Kuliah Pengembangan Matematika SD</p>
+            <p>
+              Dosen Pengampu:
+              <strong>Dr. Dyah Triwahyuningtyas, S.Si, M.Pd</strong>
+            </p>
+          </div>
 
           <div class="beranda-kelompok">
-            <h3>Kelompok 7</h3>
+            <h3>Kelompok 7:</h3>
             <ul>
               <li>Iza Anin Nabila (230401140100)</li>
               <li>Oriensa Alnandia Siwi (230401140105)</li>

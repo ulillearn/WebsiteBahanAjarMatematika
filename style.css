@@ -32,6 +32,10 @@ body {
   background-color: var(--warna-latar);
   color: var(--warna-teks);
   line-height: 1.6;
+  /* --- PERBAIKAN HEADER FIXED 2/2 --- */
+  /* Memberi jarak di atas body agar konten tidak tertutup header */
+  /* Sesuaikan 70px jika tinggi header Anda berubah */
+  padding-top: 70px;
 }
 
 /* --- Navigasi Utama --- */
@@ -40,7 +44,9 @@ body {
   border-bottom: 1px solid #ddd;
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  position: sticky;
+  /* --- PERBAIKAN HEADER FIXED 1/2 --- */
+  position: fixed; /* Diubah dari 'sticky' menjadi 'fixed' */
+  width: 100%; /* Ditambahkan agar header menutupi lebar layar */
   top: 0;
   z-index: 900;
 }
@@ -136,9 +142,6 @@ body {
 }
 
 /* --- PERBAIKAN UNTUK DROPDOWN KANAN (Quiz & Evaluasi) --- */
-/* Selector diubah dari :last-child menjadi :nth-last-child(-n+2)
-  Ini akan menargetkan 2 elemen .nav-dropdown terakhir di .nav-links
-*/
 .nav-dropdown:nth-last-child(-n + 2) .dropdown-content {
   right: 0; /* Paksa dropdown rata kanan */
   left: auto; /* Nonaktifkan rata kiri default */
@@ -633,6 +636,15 @@ details.contoh-jawaban p strong {
 
 /* --- Penyesuaian Responsif --- */
 @media (max-width: 768px) {
+  /* --- PERBAIKAN HEADER FIXED 2/2 (RESPONSIF) --- */
+  /* Mengatur padding-top body di mobile.
+    Tingginya (100px) mungkin perlu disesuaikan jika Anda mengubah
+    font/padding header di mode mobile.
+  */
+  body {
+    padding-top: 100px;
+  }
+
   .nav-container {
     flex-direction: column;
     gap: 10px;
